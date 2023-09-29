@@ -1,6 +1,7 @@
 # password-pattern-identification
 Cyberres Hackfest 2022 Idea and Demo project
 
+
 This project is to demonstrate a feature in existing SSPR(Self Service Password Reset) Product that is owned by Micro Focus.
 
 https://hackfest.microfocus.net/26/projects/3971
@@ -20,3 +21,6 @@ or
 * flask
 * tinyDB
 * enchant
+
+## Cyberres Hackfest 2022 (December)
+All rights reserved.
