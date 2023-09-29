@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid p-3 m-3">
+    <p class="h3" style="color:#777">Security Questions</p>
+
+    <form action="/updateSecuritySettingsOp" method="post">
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Question 1:</label>
+                <select name="q1" class="custom-select mr-sm-2" id="inlineFormCustomSelect1">
+                  <option selected>Choose...</option>
+                  <option value="1">In what city were you born?</option>
+                  <option value="2">What is the name of your favorite pet?</option>
+                  <option value="3">What high school did you attend?</option>
+                  <option value="4">What year was your father (or mother) born?</option>
+                  <option value="5">What was the make of your first car?</option>
+                  <option value="6">What was the name of your college?</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Answer" id="answer1" name="answer1">
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Question 2:</label>
+                <select name="q2" class="custom-select mr-sm-2" id="inlineFormCustomSelect2">
+                    <option selected>Choose...</option>
+                    <option value="1">In what city were you born?</option>
+                    <option value="2">What is the name of your favorite pet?</option>
+                    <option value="3">What high school did you attend?</option>
+                    <option value="4">What year was your father (or mother) born?</option>
+                    <option value="5">What was the make of your first car?</option>
+                    <option value="6">What was the name of your college?</option>
+                  </select>
+                  <input type="text" class="form-control" placeholder="Answer" id="answer2" name="answer2">
+
+            </div>
+        </div>
+        <button class="btn btn-dark" type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+</div>
+
+
+{%  if data['q1']!=None %}
+<script type="text/javascript">
+    var ques1 = '{{ data["q1"] }}';
+    var ques2 = '{{ data["q2"] }}';
+    var ans1 = '{{ data["answer1"] }}';
+    var ans2 = '{{ data["answer2"] }}';
+    console.log("gvv")
+    console.log(ans1)
+    $(document).ready(function(){
+        $("#answer1").val(ans1);
+        $("#answer2").val(ans2);
+    });
+    document.getElementById('inlineFormCustomSelect1').getElementsByTagName('option')[ques1].selected = 'selected'
+    document.getElementById('inlineFormCustomSelect2').getElementsByTagName('option')[ques2].selected = 'selected'
+
+</script>
+{% endif %}
+
+{% endblock %}

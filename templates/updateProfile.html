@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .states label 
+    {
+        display:inline-block;
+        width:263px;/* rounding error */
+        margin-bottom:10;
+        padding:0;
+        white-space:nowrap;
+    }
+    .container-fluid
+    {
+        display: flex;
+        flex-direction: column;
+        min-height: 110vh
+    }
+</style>
+
+<div class="container-fluid p-3 m-3">
+    <p class="h3" style="color:#777">Update User Profile</p>
+    <form  action="/updateUserProfileOp" method="post">
+        <p>
+            <div form-inline class="states">
+            <label>First Name:</label>
+            <label>Middle Name:</label>
+            <label>Last Name:</label>
+            <br>
+            <input type="text" size="30" name="firstName" id="firstName">
+            <input type="text" size="30" name="middleName" id="middleName">
+            <input type="text" size="30" name="lastName" id="lastName">
+            </div>
+        </p>
+        <p>
+            <div form-inline class="states">
+            <label>Company Email:</label>
+            <label>Personal Email:</label>
+            <label>Phone Number:</label>
+
+            <label></label>
+            <br>
+            <input type="text" size="30" name="companyEmail" id="companyEmail">
+            <input type="text" size="30" name="personalEmail" id="personalEmail">
+            <input type="phone" size="30" name="phone" id="phone" />
+
+            </div>
+        </p>
+        <p>
+            <div form-inline class="states">
+            <label>EmployeeID:</label>
+            <label>Company:</label>
+            <label></label>
+            <br>
+            <input type="text" size="30" name="employeeID" id="employeeID" disabled>
+            <input type="text" size="60" name="company" id="company" disabled>
+
+            </div>
+        </p>
+        <p>
+            <div form-inline class="states">
+                <label>Date of Birth:</label>
+                <label>Nationality:</label>
+                <label></label>
+            <br>
+            <input type="text" size="30" name="DOB" id="DOB">
+            <input type="text" size="60" name="nationality" id="nationality">
+            </div>
+        </p>
+
+        <p>
+            <label>Home Address:</label>
+            <br>
+            <input type="text" size="90" name="address" id="address" />
+        </p>
+
+        <button type="submit" id="submit" 
+            class="btn btn-dark">
+            Submit
+        </button>
+    </form>
+</div>
+
+{%  if data['employeeID']!=None %}
+<script type="text/javascript">
+
+    var v1 = '{{ data["first_name"] }}';
+    var v2 = '{{ data["last_name"] }}';
+    var v3 = '{{ data["personalemail"] }}';
+    var v4 = '{{ data["companyemail"] }}';
+    var v5 = '{{ data["phone_number"] }}';
+    var v6 = '{{ data["DOB"] }}';
+    var v7 = '{{ data["address"] }}';
+    var v8 = '{{ data["nationality"] }}';
+    var v9 = '{{ data["company"] }}';
+    var v10 = '{{ data["employeeID"] }}';
+
+
+    $(document).ready(function(){
+        $("#firstName").val(v1);
+        $("#lastName").val(v2);
+        $("#personalEmail").val(v3);
+        $("#companyEmail").val(v4);
+        $("#phone").val(v5);
+        $("#DOB").val(v6);
+        $("#address").val(v7);
+        $("#nationality").val(v8);
+        $("#company").val(v9);
+        $("#employeeID").val(v10);
+    });
+</script>
+{% endif %}
+
+
+{% endblock %}

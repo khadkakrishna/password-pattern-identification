@@ -1,0 +1,494 @@
+﻿WEBVTT
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4230-0
+00:00:04.478 --> 00:00:04.788
+And.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4270-0
+00:00:06.258 --> 00:00:09.129
+Hello everyone. I'm Krishna
+Karta and today I'll be
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4270-1
+00:00:09.129 --> 00:00:12.386
+presenting the idea password
+pattern identification and in
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4270-2
+00:00:12.386 --> 00:00:15.754
+this Hack Fest project I have
+worked with Yashpreet Kaur. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4270-3
+00:00:15.754 --> 00:00:19.011
+let's get through the agenda. So
+today we'll be discussing
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4270-4
+00:00:19.011 --> 00:00:19.508
+password.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-0
+00:00:20.948 --> 00:00:23.746
+Problem statement ID
+implementation and the
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-1
+00:00:23.746 --> 00:00:27.562
+technology used along with the
+demonstration at the end. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-2
+00:00:27.562 --> 00:00:31.504
+what's the problem statement?
+According to some research, 90%
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-3
+00:00:31.504 --> 00:00:35.510
+of the passwords are vulnerable
+and are easy to predict. So it
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-4
+00:00:35.510 --> 00:00:39.326
+becomes important to prevent the
+users from setting up such
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-5
+00:00:39.326 --> 00:00:43.523
+passwords in the application and
+the main cause of this bridge is
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-6
+00:00:43.523 --> 00:00:47.338
+the use of some patterns in the
+password. So we are problem
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-7
+00:00:47.338 --> 00:00:51.344
+statement revolves around that
+that is to find the patterns in
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4340-8
+00:00:51.344 --> 00:00:51.598
+the.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-0
+00:00:51.678 --> 00:00:55.897
+Us so it's so the implementation
+will be basically on the part of
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-1
+00:00:55.897 --> 00:00:59.860
+analyzing the old password that
+are there in the database for
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-2
+00:00:59.860 --> 00:01:03.311
+the users analysis of user
+information, user profile,
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-3
+00:01:03.311 --> 00:01:07.274
+etcetera. And on top of that we
+will be using some of the NLP
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-4
+00:01:07.274 --> 00:01:10.981
+models to find the common
+language words that are present
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4391-5
+00:01:10.981 --> 00:01:11.428
+in the.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4441-0
+00:01:12.648 --> 00:01:16.914
+Password so the text stack we
+are using. So we have uh these
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4441-1
+00:01:16.914 --> 00:01:21.179
+technologies to build up the
+demo application for the UI and
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4441-2
+00:01:21.179 --> 00:01:25.375
+we will have a flask framework
+running on top of Python And
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4441-3
+00:01:25.375 --> 00:01:29.850
+we'll be using some of the NLP
+libraries along with tiny DB for
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4441-4
+00:01:29.850 --> 00:01:31.668
+storing the user database.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4446-0
+00:01:34.688 --> 00:01:36.458
+Let's take a look at the demo.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-0
+00:01:37.398 --> 00:01:41.077
+So before going to the demo,
+I'll just walk you through the
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-1
+00:01:41.077 --> 00:01:44.327
+code. So this is the code
+repository. So to run this
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-2
+00:01:44.327 --> 00:01:48.190
+application we will be starting
+with App dot Pai, so this will
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-3
+00:01:48.190 --> 00:01:51.624
+be the entry point for the
+project and in the source we
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-4
+00:01:51.624 --> 00:01:55.119
+have this file that will be
+having the all the logic for
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-5
+00:01:55.119 --> 00:01:59.043
+finding the patterns and there
+is some file called wordlist dot
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-6
+00:01:59.043 --> 00:02:02.660
+TXT that will prevent the user
+from setting up some common
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4521-7
+00:02:02.660 --> 00:02:03.028
+words.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4562-0
+00:02:04.528 --> 00:02:09.116
+In the yeah. And after that we
+have just this DB dot Jason this
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4562-1
+00:02:09.116 --> 00:02:13.703
+is sample database that I have
+for the user particular user and
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4562-2
+00:02:13.703 --> 00:02:17.861
+there are some old passwords,
+security questions and some
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4562-3
+00:02:17.861 --> 00:02:22.233
+personal details of the user
+available. Let's take a look at
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4562-4
+00:02:22.233 --> 00:02:22.878
+the demo.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4582-0
+00:02:25.708 --> 00:02:29.882
+So this is the application for a
+logging to the particular
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4582-1
+00:02:29.882 --> 00:02:34.197
+application, so I'll just use
+the user that I have available
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4582-2
+00:02:34.197 --> 00:02:35.328
+in the database.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4621-0
+00:02:36.418 --> 00:02:39.991
+So once I successfully log in,
+I'll be lending to this home
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4621-1
+00:02:39.991 --> 00:02:42.968
+screen where I have some
+password service related
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4621-2
+00:02:42.968 --> 00:02:46.541
+functionalities like change of
+the password, second factor,
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4621-3
+00:02:46.541 --> 00:02:49.637
+authentication, security
+questions and updating the
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4621-4
+00:02:49.637 --> 00:02:50.768
+profile. So if you.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-0
+00:02:51.778 --> 00:02:54.986
+Take a look at the profile. You
+will see all the personal
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-1
+00:02:54.986 --> 00:02:58.525
+information of the users that it
+has been there in the database
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-2
+00:02:58.525 --> 00:03:02.008
+file. So and user have a choice
+to update this particular user
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-3
+00:03:02.008 --> 00:03:05.437
+information and setting up some
+of the security questions. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-4
+00:03:05.437 --> 00:03:08.699
+there are set of security
+questions available for the user
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-5
+00:03:08.699 --> 00:03:12.238
+to set. I have chose these two
+questions for the as part of the
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-6
+00:03:12.238 --> 00:03:15.501
+security questions and we will
+be demonstrating the change
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4703-7
+00:03:15.501 --> 00:03:18.818
+password. So before that I'll I
+want you to take a look at.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-0
+00:03:18.898 --> 00:03:23.378
+Done these two parameters, so
+one is the name of my favorite
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-1
+00:03:23.378 --> 00:03:27.637
+pet. I'll try to set up my
+password around this and let's
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-2
+00:03:27.637 --> 00:03:32.189
+say my date of birth, so I'll
+try to use these two parameters
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-3
+00:03:32.189 --> 00:03:36.742
+in the password along with some
+old passwords. So if I take a
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-4
+00:03:36.742 --> 00:03:41.589
+look at the DB dot JSON I'll see
+these are some of the sample old
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-5
+00:03:41.589 --> 00:03:46.288
+passwords that were available.
+So I'll be using those passwords
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4771-6
+00:03:46.288 --> 00:03:48.858
+in the new password. So let's
+say.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4773-0
+00:03:49.018 --> 00:03:49.578
+Umm.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4830-0
+00:04:03.258 --> 00:04:06.928
+So from the password it might
+look like a very complex
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4830-1
+00:04:06.928 --> 00:04:10.331
+password and let verify it
+through the our pattern
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4830-2
+00:04:10.331 --> 00:04:14.668
+identification method. So when I
+send click on the verify button
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4830-3
+00:04:14.668 --> 00:04:18.605
+so it says there are four
+warnings and my submit button is
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4830-4
+00:04:18.605 --> 00:04:22.808
+disabled. So I can't change my
+password until I resolve these.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-0
+00:04:23.928 --> 00:04:27.407
+Warnings. So it says a pattern
+forms in four of the aspects
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-1
+00:04:27.407 --> 00:04:30.827
+like security answer exist, new
+password contains the user
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-2
+00:04:30.827 --> 00:04:34.015
+information and some old
+password pattern is there and
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-3
+00:04:34.015 --> 00:04:37.377
+NLP found some common words,
+some dictionary words in the
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-4
+00:04:37.377 --> 00:04:40.855
+particular new password. So
+let's try to resolve 1 by 1. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-5
+00:04:40.855 --> 00:04:44.623
+as you know as you have seen my
+date of birth is 28 Feb 1999. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-6
+00:04:44.623 --> 00:04:48.043
+let's try to change it to some
+different value that is not
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-7
+00:04:48.043 --> 00:04:51.522
+available in the password. So
+I'll try to change it to this
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4912-8
+00:04:51.522 --> 00:04:53.898
+and then I'll verify the
+password again.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4920-0
+00:04:54.958 --> 00:04:56.388
+So as you can see, one of the
+bus.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4963-0
+00:04:57.108 --> 00:05:00.625
+Personal information warning has
+been gone, so let's try to uh,
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4963-1
+00:05:00.625 --> 00:05:03.976
+uh, change one more. So this
+password has been repeated from
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4963-2
+00:05:03.976 --> 00:05:07.108
+my old password. So this
+particular string out of it. So
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4963-3
+00:05:07.108 --> 00:05:10.404
+I'll just remove it and I'll
+replace it with something that
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4963-4
+00:05:10.404 --> 00:05:11.118
+has not been.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/4965-0
+00:05:11.198 --> 00:05:11.548
+No.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5015-0
+00:05:12.738 --> 00:05:17.151
+Used before and let's try to
+verify the password again. So as
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5015-1
+00:05:17.151 --> 00:05:21.422
+you can see that warning has
+also been gone. So there is my
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5015-2
+00:05:21.422 --> 00:05:26.048
+pet name available and that that
+was my security answer as well.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5015-3
+00:05:26.048 --> 00:05:30.390
+So I'll remove the sum of the
+characters from that and let's
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5015-4
+00:05:30.390 --> 00:05:30.888
+try to.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5050-0
+00:05:31.828 --> 00:05:35.222
+Verify the password so as you
+can see that warning has also
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5050-1
+00:05:35.222 --> 00:05:38.560
+gone. So it says now some
+predictable or common dictionary
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5050-2
+00:05:38.560 --> 00:05:42.124
+words are there. So as you can
+see there is something cache is
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5050-3
+00:05:42.124 --> 00:05:43.368
+there. So if I remove.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5073-0
+00:05:46.688 --> 00:05:51.230
+This. Yeah. Now, now. This looks
+like something that doesn't have
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5073-1
+00:05:51.230 --> 00:05:55.358
+any dictionary word. Let's find
+out. And. Yeah, so now all.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5112-0
+00:05:55.998 --> 00:05:59.932
+The warnings are gone and the
+submit button is enabled. So if
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5112-1
+00:05:59.932 --> 00:06:03.993
+I submit the password as let me
+check the database as well so I
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5112-2
+00:06:03.993 --> 00:06:07.483
+can see that my database has
+been updated with the new
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5112-3
+00:06:07.483 --> 00:06:11.417
+password and if I try to log in
+with the new password I'll be
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5112-4
+00:06:11.417 --> 00:06:12.368
+able to log in.
+
+d3f2ed12-e307-4a47-acde-68dc1550e251/5115-0
+00:06:16.548 --> 00:06:17.048
+Thank you.
